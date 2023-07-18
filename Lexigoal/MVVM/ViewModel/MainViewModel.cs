@@ -6,26 +6,40 @@ namespace Lexigoal.MVVM.ViewModel
 {
 	public class MainViewModel : Core.ViewModel
     {
-		private INavigationService _navigation;
+		public RelayCommand HomeViewCommand { get; set; }
+		public RelayCommand SettingsViewCommand { get; set; }
 
-        public INavigationService Navigation
-        {
-            get => _navigation;
-            set
-            {
-                _navigation = value;
-                OnPropertyChanged();
-            }
+
+		public HomeViewModel HomeVM { get; set; }
+        public SettingsViewModel SettingsVM { get; set; }
+
+        private object _currentView;
+
+        public object CurrentView 
+        { 
+            get { return _currentView; }    
+            set 
+            { 
+                _currentView = value; OnPropertyChanged(); 
+            } 
         }
 
-        public RelayCommand NavigateToHomeCommand { get; set; }
-        public RelayCommand NavigateToSettingsCommand { get; set; }
-
-		public MainViewModel(INavigationService navService)
+        public MainViewModel() 
         {
-            Navigation = navService;
-			NavigateToHomeCommand = new RelayCommand(n => { Navigation.NavigateTo<HomeViewModel>(); }, n => true);
-			NavigateToSettingsCommand = new RelayCommand(n => { Navigation.NavigateTo<SettingsViewModel>(); }, n => true); 
+            HomeVM = new HomeViewModel();
+			SettingsVM = new SettingsViewModel();
+
+			CurrentView = HomeVM;
+
+            HomeViewCommand = new RelayCommand(n =>
+            {
+                CurrentView = HomeVM;
+            });
+
+			SettingsViewCommand = new RelayCommand(n =>
+			{
+				CurrentView = SettingsVM;
+			});
 		}
     }
 }
