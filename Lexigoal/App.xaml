@@ -8,6 +8,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="./Themes/NavOption.xaml"/>
                 <ResourceDictionary Source="./Themes/IconButton.xaml"/>
+                <ResourceDictionary Source="./Themes/PrimaryTextBox.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
