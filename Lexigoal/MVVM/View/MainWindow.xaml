@@ -87,11 +87,11 @@
                          IsChecked="True"
                          Command="{Binding HomeViewCommand}"/>
 
-            <RadioButton Content="WORD STACKS"
+            <!--<RadioButton Content="WORD STACKS"
                          Height="50"
                          Foreground="#000"
                          FontSize="14"
-                         Style="{StaticResource NavOption}"/>
+                         Style="{StaticResource NavOption}"/>-->
 
             <RadioButton Content="SPELLING PRACTICE"
                          Height="50"
@@ -128,65 +128,6 @@
         <!--Main Content-->
         <ContentControl Grid.Row="1"
                         Grid.Column="1"
-                        Margin="10"
-                        Content="{Binding CurrentView}"/>
-
-        <!--<Grid Background="#2F3136"
-              Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition/>
-                <RowDefinition Height="50"/>
-            </Grid.RowDefinitions>
-
-            <Label Content="NAVIGATION"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"
-                   FontWeight="Medium"
-                   Foreground="White"
-                   Grid.Row="0"/>
-
-            <StackPanel Grid.Row="1">
-                <Button Content="Home"
-                        Height="25"
-                        Command="{Binding NavigateToHomeCommand}"/>
-
-                <Button Content="Settings"
-                        Height="25"
-                        Command="{Binding NavigateToSettingsCommand}"/>
-            </StackPanel>
-
-            <Grid Grid.Row="2">
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-
-                --><!-- This will be the buttons for the settings and the user log in--><!--
-                <Border CornerRadius="25"
-                        Width="30"
-                        Height="30"
-                        Background="Blue"
-                        Grid.Column="1"/>
-
-                <Border CornerRadius="25"
-                        Width="30"
-                        Height="30"
-                        Background="Blue"
-                        Grid.Column="3"/>
-            </Grid>
-
-            --><!-- Main Content --><!--
-            <ContentControl Margin="200,0,-1000,0" 
-                            Grid.RowSpan="3"
-                            Background="Red"
-                            Content="{Binding Navigation.CurrentView}">
-
-            </ContentControl>
-        </Grid>-->
+                        Content="{Binding CurrentView}" Grid.RowSpan="2"/>
     </Grid>
 </Window>

@@ -9,11 +9,12 @@
 
   <ItemGroup>
     <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MVVM\Model\" />
+    <Folder Include="Database\SqlScripts\" />
     <Folder Include="Resources\Images\" />
     <Folder Include="Resources\Icons\" />
   </ItemGroup>

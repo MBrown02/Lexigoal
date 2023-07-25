@@ -11,7 +11,7 @@
     <StackPanel VerticalAlignment="Center"
                 HorizontalAlignment="Center">
 
-        <Grid HorizontalAlignment="Center"
+        <!--<Grid HorizontalAlignment="Center"
               Margin="0,0,0,50">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
@@ -20,17 +20,19 @@
 
             <TextBlock Text="Word Stack Currently In Use: "
                        VerticalAlignment="Center"
-                       Foreground="#FFF"
+                       Foreground="#000"
                        Grid.Column="0"
                        Margin="0, 0, 10, 0"/>
 
             <ComboBox Width="200"
-                      Grid.Column="1"/>
-        </Grid>
+                      Grid.Column="1"
+                      Style="{StaticResource DropdownMenu}"/>
+        </Grid>-->
 
         <TextBox Width="450"
                  Height="40"
                  VerticalContentAlignment="Center"
+                 KeyDown="TextBox_EnterKeyDown"
                  Style="{StaticResource PrimaryTextBox}"/>
     </StackPanel>
 </UserControl>

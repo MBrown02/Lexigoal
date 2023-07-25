@@ -1,28 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Lexigoal.MVVM.Model.Repository;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Lexigoal.MVVM.View
 {
-    /// <summary>
-    /// Interaction logic for HomeView.xaml
-    /// </summary>
-    public partial class HomeView : UserControl
+	/// <summary>
+	/// Interaction logic for HomeView.xaml
+	/// </summary>
+	public partial class HomeView : UserControl
     {
         public HomeView()
         {
             InitializeComponent();
         }
-    }
+
+        private void TextBox_EnterKeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+				string inputValue = ((TextBox)sender).Text;
+
+				System.Diagnostics.Debug.WriteLine($"Input Value: {inputValue}");
+
+				MessageBox.Show($"You entered: {inputValue}");
+			}
+        }
+
+	}
 }
