@@ -3,6 +3,10 @@
 
     <Style TargetType="{x:Type TextBox}"
            x:Key="PrimaryTextBox">
+        <Setter Property="Foreground" Value="#CFCFCF" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
@@ -10,39 +14,14 @@
                             Background="#353340"
                             Width="{Binding ActualWidth, RelativeSource={RelativeSource TemplatedParent}}"
                             Height="30">
-
                         <Grid>
-                            <Rectangle StrokeThickness="1"/>
-                            <TextBox Margin="1"
-                                         Text="{TemplateBinding Text}"
-                                         BorderThickness="0"
-                                         Background="Transparent"
-                                         VerticalContentAlignment="Center"
-                                         Padding="5"
-                                         Foreground="#CFCFCF"
-                                         x:Name="InnerTextBox"/>
-
-                            <TextBlock IsHitTestVisible="False"
-                                           Text="Type a new word you would like to practice"
-                                           VerticalAlignment="Center"
-                                           HorizontalAlignment="Center"
-                                           Margin="10,0,0,0"
-                                           FontSize="11"
-                                           Foreground="DarkGray"
-                                           Grid.Column="1">
-
-                                <TextBlock.Style>
-                                    <Style TargetType="{x:Type TextBlock}">
-                                        <Style.Triggers>
-                                            <DataTrigger Binding="{Binding Text, ElementName=InnerTextBox}" Value="">
-                                                <Setter Property="Visibility" Value="Visible"/>
-                                            </DataTrigger>
-                                        </Style.Triggers>
-                                        <Setter Property="Visibility" Value="Hidden"/>
-                                    </Style>
-                                </TextBlock.Style>
-
-                            </TextBlock>
+                            <ScrollViewer x:Name="PART_ContentHost" Background="Transparent" />
+                            <TextBlock x:Name="PlaceholderTextBlock"
+                                       Text="Type a new word you would like to practice"
+                                       Foreground="DarkGray"
+                                       VerticalAlignment="Center"
+                                       IsHitTestVisible="False"
+                                       Visibility="{TemplateBinding Tag}"/>
                         </Grid>
                     </Border>
                 </ControlTemplate>

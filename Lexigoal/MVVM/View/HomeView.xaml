@@ -33,6 +33,9 @@
                  Height="40"
                  VerticalContentAlignment="Center"
                  KeyDown="TextBox_EnterKeyDown"
-                 Style="{StaticResource PrimaryTextBox}"/>
+                 Style="{StaticResource PrimaryTextBox}"
+                 GotFocus="TextBox_GotFocus"
+                 LostFocus="TextBox_LostFocus"
+                 Tag="Visible"/>
     </StackPanel>
 </UserControl>

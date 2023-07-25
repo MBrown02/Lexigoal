@@ -15,7 +15,23 @@ namespace Lexigoal.MVVM.View
             InitializeComponent();
         }
 
-        private void TextBox_EnterKeyDown(object sender, KeyEventArgs e)
+		private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+		{
+			if (string.IsNullOrEmpty(((TextBox)sender).Text))
+			{
+				((TextBox)sender).Tag = Visibility.Collapsed;
+			}
+		}
+
+		private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+		{
+			if (string.IsNullOrEmpty(((TextBox)sender).Text))
+			{
+				((TextBox)sender).Tag = Visibility.Visible;
+			}
+		}
+
+		private void TextBox_EnterKeyDown(object sender, KeyEventArgs e)
         {
             if(e.Key == Key.Enter)
             {
