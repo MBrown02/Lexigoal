@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lexigoal.MVVM.Model
 {
-    public class wordModel
+    public class WordModel
     {
         public int wordId { get; set; }
         public string word { get; set; }

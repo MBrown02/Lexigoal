@@ -21,7 +21,7 @@ namespace Lexigoal.MVVM.Model.Repository
 		#endregion
 
 		#region Public Methods - Synchronous
-        public wordModel InsertWord(wordModel word)
+        public WordModel CreateWord(WordModel word)
         {
 			List<ParmStruct> parms = new() 
             {
