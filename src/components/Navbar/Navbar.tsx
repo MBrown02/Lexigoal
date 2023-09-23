@@ -1,16 +1,26 @@
 import './Navbar.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAnglesLeft, faHome, faBrain, faLayerGroup, faGear } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
-    return (
-        <div className="navbar">
-            <ul className="navbar-list">
-                <li className="navbar-item"><a href="/">Home</a></li>
-                <li className="navbar-item"><a href="/about">About</a></li>
-                <li className="navbar-item"><a href="/services">Services</a></li>
-                <li className="navbar-item"><a href="/contact">Contact</a></li>
-            </ul>
+  const navItems = [
+      { icon: faAnglesLeft, text: ''},
+      { icon: faHome, text: 'Home' },
+      { icon: faBrain, text: 'Words' },
+      { icon: faLayerGroup, text: 'Deck' },
+      { icon: faGear, text: 'Settings'}
+  ];
+
+  return (
+    <div className="navbar">
+      {navItems.map((item, index) => (
+        <div key={index} className="nav-item">
+          <FontAwesomeIcon icon={item.icon} className="icon" />
+          <span className="text">{item.text}</span>
         </div>
-    );
-}
+      ))}
+    </div>
+  );
+};
 
 export default Navbar;
