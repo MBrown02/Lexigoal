@@ -1,4 +1,19 @@
-.primary-text-field {
+.primary-text-field-parent{
+  height: 100%;
   width: 100%;
-  margin-bottom: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.primary-text-field{
+  width: 50%;
+  height: 5%;
+
+  background-color: var(--color-secondary);
+  color: var(--color-tertiary);
+  border-radius: 10px 10px 10px 10px;
+  border: none;
 }
