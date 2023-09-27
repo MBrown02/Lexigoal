@@ -10,10 +10,15 @@
 
 .primary-text-field{
   width: 50%;
-  height: 5%;
+  height: 60px;
 
   background-color: var(--color-secondary);
   color: var(--color-tertiary);
   border-radius: 10px 10px 10px 10px;
   border: none;
+
+  padding-left: 20px;
+  padding-right: 20px;
+
+  font-size: 125%;
 }
