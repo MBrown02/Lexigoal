@@ -21,8 +21,8 @@ app.use(cors()); // Enabling CORS for all routes
 app.use(express.json()); // Parsing JSON data
 
 // Your routes will go here
-const testRouter = require('./routes/test_route');
-app.use(testRouter);
+const lexemeRoute = require('./routes/lexemeRoute');
+app.use(lexemeRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

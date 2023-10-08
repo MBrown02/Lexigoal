@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Navbar from "./components/Navbar/Navbar";
-import NavToggle from "./components/EnableNavButton/EnableNavButton";
 import PrimaryTextField from "./components/PrimaryTextField/PrimaryTextField";
 import "./styles.css";
 
