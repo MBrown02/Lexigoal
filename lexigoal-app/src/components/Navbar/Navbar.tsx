@@ -1,4 +1,5 @@
 import './Navbar.css';
+import { Link } from "react-router-dom";
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAnglesLeft, faAnglesRight, faHome, faBrain, faLayerGroup, faGear } from '@fortawesome/free-solid-svg-icons';
@@ -20,11 +21,11 @@ const Navbar = () => {
   };
 
   const navItems = [
-      { icon: faAnglesLeft, text: ''},
-      { icon: faHome, text: 'Home' },
-      { icon: faBrain, text: 'Practice' },
-      { icon: faLayerGroup, text: 'Word List' },
-      { icon: faGear, text: 'Settings'}
+      { icon: faAnglesLeft, text: '', link: '/'},
+      { icon: faHome, text: 'Home', link: '/' },
+      { icon: faBrain, text: 'Practice', link: '/practice'},
+      { icon: faLayerGroup, text: 'Word List', link: '/decks' },
+      { icon: faGear, text: 'Settings', link: '/settings'}
   ];
 
   return (
@@ -32,11 +33,13 @@ const Navbar = () => {
     <div className={`navbar ${isRetracted ? 'retracted' : ''} ${isNavbarExtending ? 'extending' : ''}`}>
       {navItems.map((item, index) => (
         <div key={index} className="nav-item">
-          <FontAwesomeIcon 
-            icon={item.icon}
-            className="icon"
-            onClick={index === 0 ? toggleRetraction : undefined} />
-          <span className="text">{item.text}</span>
+          <Link to={item.link}>
+            <FontAwesomeIcon
+              icon={item.icon}
+              className="icon"
+              onClick={index === 0 ? toggleRetraction : undefined} />
+            <span className="text">{item.text}</span>
+          </Link>
         </div>
       ))}
     </div>

@@ -18,7 +18,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+}
 
 .nav-item{
     padding: 1em;
@@ -29,6 +29,16 @@
     color: var(--color-tertiary);
     text-decoration: none;
     transition: 0.2s;
+}
+
+a{
+    text-decoration: none;
+    color: var(--color-tertiary);
+}
+
+a:visited{
+    text-decoration: none;
+    color: var(--color-tertiary);
 }
 
 .nav-item:first-child{
