@@ -21,7 +21,7 @@ const Navbar = () => {
   };
 
   const navItems = [
-      { icon: faAnglesLeft, text: '', link: '/'},
+      { icon: faAnglesLeft, text: '', link: '#'},
       { icon: faHome, text: 'Home', link: '/' },
       { icon: faBrain, text: 'Practice', link: '/practice'},
       { icon: faLayerGroup, text: 'Word List', link: '/decks' },
@@ -38,7 +38,7 @@ const Navbar = () => {
               icon={item.icon}
               className="icon"
               onClick={index === 0 ? toggleRetraction : undefined} />
-            <span className="text">{item.text}</span>
+            {/* <span className="text">{item.text}</span> */}
           </Link>
         </div>
       ))}
