@@ -1,8 +1,17 @@
 import React, { useState } from 'react';
+import EyeImg from '../../assets/eye-regular.svg';
+import EarImg from '../../assets/ear-listen-solid.svg';
 import './PracticePage.css';
 
 const PracticePage = () => {
     const [inputValue, setInputValue] = useState('');
+    const [isFlashMode, setAudioMode] = useState(true); // Assume day mode by default
+
+
+    const handleModeToggleClick = () => {
+        setAudioMode(!isFlashMode);
+    };
+
 
     /*
         User clicks "Begin Practice" button
@@ -42,25 +51,19 @@ const PracticePage = () => {
     return (
         <>
             <div className='practice-page-content'>
-                {/* Display area for the current mode */}
-                <div>
-                    <h1>Current Mode: Flash</h1>
-                </div>
+                {/* Display area for the word to be practiced and the visual indicator of what mode the user selected */}
+                <img className="mode-image" 
+                     src={isFlashMode ? EyeImg : EarImg} 
+                     alt="" />
+                {/* <h1 className="practice-word-display">Word</h1> */}
+                
 
-                <div>
-                    <button onClick={handleBeginPractice}>Begin Practice</button>
-                </div>
-
-                {/* Display area for the word to be practiced */}
-                <div className="practice-word-display">
-                    <h1>Word</h1>
-                </div>
-
-                {/* Text field for user to enter their response */}
-                <div>
+                {/* Text field and Mode toggle Centered */}
+                <div className="text-field-and-mode-toggle">
+                    {/* Text field for user to enter their response */}
                     <input
                         className="response-text-field"
-                        placeholder="Enter your response"
+                        placeholder="Click here to begin practice"
                         type="text"
                         value={inputValue}
                         onChange={(e) => setInputValue(e.target.value)}
@@ -70,9 +73,18 @@ const PracticePage = () => {
                             }
                         }}
                     />
+
+                    {/* Toggle Mode Button */}
+                    <button className="toggle-mode-btn"
+                            onClick={handleModeToggleClick}>{isFlashMode ? "Mode: Flash" : "Mode: Audio"}</button>
                 </div>
 
 
+                {/* Statistics Dashboard */}
+                <div className="statistics-dashboard">
+                    <h3>Statistics Dashboard</h3>
+                    <p>Proficiency: 0</p>
+                </div>
             </div>
         </>
     );
